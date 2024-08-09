@@ -56,10 +56,34 @@ Classes inherited from Base Model:
 
 #### `/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
 [file_storage.py](/models/engine/file_storage.py) - serializes instances to a JSON file & deserializes back to instances
-* `def all(self)` - returns the dictionary __objects
-* `def new(self, obj)` - sets in __objects the obj with key <obj class name>.id
-* `def save(self)` - serializes __objects to the JSON file (path: __file_path)
-* ` def reload(self)` -  deserializes the JSON file to __objects
+* `def all(self)` - returns the dictionary \__objects
+* 'def new(self, obj)' - sets in \__objects the obj with key <obj class name>.id
+* `def save(self)` - serializes \__objects to the JSON file (path: \__file_path)
+* `def reload(self)` -  deserializes the JSON file to \__objects
+* `def get(self, cls, id)` - get a class object from storage
+* `def count(self, cls=None)` - return the no of objects of a class in storage
+[db_storage.py](/models/engine/db_storage.py) - save instances of class to MySQL DB
+* `def all(self)` - returns the dictionary \__session
+* `def new(self, obj)` - sets in \__session the obj with key <obj class name>.id
+* `def save(self)` - saves created objects in \__session
+* `def reload(self)` -  load saved objects from DB into \__session
+* `def get(self, cls, id)` - get a class object from DB
+* `def count(self, cls=None)` - return the no of objects of a class in DB
+
+#### `/api/v1` REST API serving objects of this project:
+[app.py](/api/v1/app.py) - serves JSON representation of Class objects e.g States, Places, Amenities etc
+[index.py](/app/v1/views/index.py) - return index details on the api
+* `def status(self)` - Return status of the api in JSON
+* `def total_objs(self)` - Return the total no of individual class objects
+
+#### `/web_dynamic` Dynamic webpages with jQuery
+[0-hbnb.py](/web_dynamic/0-hbnb.py) - serves webpage template with jinja2 templates
+[1-hbnb.py](/web_dynamic/1-hbnb.py)
+##### `/web_dynamic/templates` Jinja2 templates for dynamic webpage
+[0-hbnb.html](/web_dynamic/0-hbnb.html)
+[1-hbnb.html](/web_dynamic/1-hbnb.html)
+##### `/web_dynamic/static` JQuery scripts
+[1-hbnb.js](/web_dynamic/1-hbnb.js)
 
 #### `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
@@ -155,9 +179,7 @@ No known bugs at this time.
 
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
-Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
-Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
-David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
+Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong
 ## License
