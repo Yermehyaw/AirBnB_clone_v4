@@ -30,7 +30,7 @@ $(document).ready(function () {
   });
   const url = 'http://0.0.0.0:5001/api/v1/status/';
   request(url, function (error, response, body) {
-    if (response.statusCode === 200) {
+    if (!error && response.statusCode === 200) {
       const api_status = JSON.parse(body);
       if (api_status['status'] === 'OK')
         $('div#api_status').addClass('available');
