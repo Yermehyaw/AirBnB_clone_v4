@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
     <link rel="icon" href="../static/images/icon.png" />
-    <style>OOB
+    <style>
 	input {
 		padding-right: 10px;
 	}
@@ -30,7 +30,7 @@
 	      {% for state in states %}
 	      <li>
 		<h2>{{ state[0].name }}:</h2>
-	OOA	<ul>
+		<ul>
 		  {% for city in state[1] %}
 		  <li>{{ city.name }}</li>
 		  {% endfor %}
