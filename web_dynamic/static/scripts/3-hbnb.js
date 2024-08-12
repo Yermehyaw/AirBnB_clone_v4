@@ -34,7 +34,7 @@ $(document).ready(function () {
       });
 	  for (let place in list_places) {
 	    if (place) {
-	        
+	      
 	    }
 	  }
 	  }
