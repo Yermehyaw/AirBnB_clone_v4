@@ -12,7 +12,7 @@ function writeAmenity(amenityDict) {
   $('div>h4').empty(); // clear all existing values in the elem
   for (let amenity in amenityDict) {
     const amenityName = amenityDict[amenity];
-    $('div>h4').text(amenityName);
+    $('div>h4').append(amenityName);
   }
 }
 
