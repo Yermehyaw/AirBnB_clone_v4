@@ -5,6 +5,17 @@
 const request = require('request'); 
 const $ = window.$;
 
+function writePlace(amenityDict) {
+  /**
+   * writes a new html element
+   */
+  for (let amenity in amenityDict) {
+    const amenityName = amenityDict[amenity];
+    $('div>h4').text(amenityName);
+  }
+}
+
+
 $(document).ready(function () {
 
   const postData = {};
@@ -18,9 +29,14 @@ $(document).ready(function () {
   request(options, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       list_places = JSON.parse(body);
-      $('div#placesh1 + section').html(function (index, oldHTML) {
+      $('section#places').html(function (index, oldHTML) {
         oldHTML + `<article></article>`;
       });
-	
+	  for (let place in list_places) {
+	    if (place) {
+	        
+	    }
+	  }
+	  }
     }
   });
