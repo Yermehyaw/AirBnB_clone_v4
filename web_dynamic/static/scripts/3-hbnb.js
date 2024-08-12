@@ -15,7 +15,7 @@ $(document).ready(function () {
     url: 'http://0.0.0.0:5001/api/v1/places_search/'
   }
 
-  request(url, function (error, response, body) => {
+  request(options, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       
     }
