@@ -17,7 +17,10 @@ $(document).ready(function () {
 
   request(options, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-      
+      list_places = JSON.parse(body);
+      $('div#placesh1 + section').html(function (index, oldHTML) {
+        oldHTML + `<article></article>`;
+      });
+	
     }
   });
-});
