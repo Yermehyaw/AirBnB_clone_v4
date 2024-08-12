@@ -4,6 +4,16 @@
 
 const $ = window.$;
 
+function writeAmenity(amenityDict) {
+  /**
+   * write a dict of amenities to an elem
+   */
+  $('div>h4').empty(); // clear all existing values in the elem
+  for (let amenity in amenityDict)
+    const amenityName = amenityDict[amenity];
+    $('div>h4').text(amenityName);
+}
+
 $(document).ready(function () {
   let amenityDict = {};
   $('li>input').toggle(function () {
@@ -17,13 +27,4 @@ $(document).ready(function () {
     delete amenityDict.amenityId; // remove the unticked amenity from dict
     writeAmenity(amenityDict);
   });
-  function writeAmenity(amenityDict) {
-  /**
-   * write a dict of amenities to an elem
-   */
-  $('div>h4').empty(); // clear all existing values in the elem
-  for (let amenity in amenityDict)
-    const amenityName = amenityDict[amenity];
-    $('div>h4').text(amenityName);
-}
 });
