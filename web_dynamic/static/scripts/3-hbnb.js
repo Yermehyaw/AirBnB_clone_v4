@@ -11,8 +11,8 @@ $(document).ready(function () {
 
   const options = {
     json: postData,
-    methods = 'POST',
-    url = 'http://0.0.0.0:5001/api/v1/places_search/'
+    methods: 'POST',
+    url: 'http://0.0.0.0:5001/api/v1/places_search/'
   }
 
   request(url, function (error, response, body) => {
