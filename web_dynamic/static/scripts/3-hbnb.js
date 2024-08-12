@@ -29,12 +29,12 @@ $(document).ready(function () {
   request(options, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       list_places = JSON.parse(body);
-      $('section#places').html(function (index, oldHTML) {
-        oldHTML + `<article></article>`;
-      });
+      $('section#places').append( `<article></article>`); // create article tag to hold alpp places
 	  for (let place in list_places) {
 	    if (place) {
-	      
+	      createDiv();
+	      const placeTitle = $(`<h2>${place.name}</h2>`) // add heading titke
+	      $('section#places+article').append(placeTitle);
 	    }
 	  }
 	  }
