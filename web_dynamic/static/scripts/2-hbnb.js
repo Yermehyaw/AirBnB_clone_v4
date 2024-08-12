@@ -32,10 +32,11 @@ $(document).ready(function () {
   request(url, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       const api_status = JSON.parse(body);
-      if (api_status['status'] === 'OK')
+      if (api_status['status'] === 'OK') {
         $('div#api_status').addClass('available');
-     else 
+      } else  {
 	    $('div#api_status').removeClass('available');
+     }
     }
   });
 });
